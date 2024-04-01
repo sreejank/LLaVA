@@ -883,8 +883,11 @@ def train(attn_implementation=None):
             padding_side="right"
         )
     else:
+        print(model_args.model_name_or_path)
+        print(training_args.cache_dir)
+        print(training_args.model_max_length)
         tokenizer = transformers.AutoTokenizer.from_pretrained(
-            model_args.model_name_or_path,
+            '/scratch/gpfs/sreejank/LLaVA/vicuna_13b_tokenizer/',
             cache_dir=training_args.cache_dir,
             model_max_length=training_args.model_max_length,
             padding_side="right",
